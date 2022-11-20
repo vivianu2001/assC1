@@ -21,7 +21,7 @@ libclassrec.a : basicClassification.o advancedClassificationRecursion.o
 
 
 advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h 
-	gcc -c -fPIC -Wall  advancedClassificationRecursion.c
+	gcc -c -fPIC -Wall  advancedClassificationRecursion.c -lm
 
 recursived: basicClassification.o advancedClassificationRecursion.o 
 	gcc  -shared -o libclassrec.so basicClassification.o advancedClassificationRecursion.o 
