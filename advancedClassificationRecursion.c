@@ -15,17 +15,10 @@ int isArmstrong(int num)
 
 	int temp2=num;
     int digits= count_digits(temp);
-
-	if(isArmstrong_Check(temp2,digits)==(long)num)
-	{
-		return 1;
+	
+return isArmstrong_Check(temp2,digits)==(long)num);
+	
 	}
-
-	else
-	{
-		return 0;
-	}
-}
 
 long isArmstrong_Check(int num, int power)
 {
