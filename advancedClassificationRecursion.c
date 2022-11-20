@@ -19,7 +19,7 @@ return isArmstrong_Check(temp2,digits)==(long)num;
 	
 	}
 
-double pow(int num,  int power)
+double pow(double  num,  double power)
 {  
 	if(power==0)
 	{
