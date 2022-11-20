@@ -17,6 +17,7 @@ recursive : basicClassification.o advancedClassificationRecursion.o libclassrec.
 
 libclassrec.a : basicClassification.o advancedClassificationRecursion.o 	
 	ar rcs libclassrec.a  basicClassification.o advancedClassificationRecursion.o 
+	ranlib libclassrec.a
 
 
 advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h 
