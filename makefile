@@ -34,18 +34,18 @@ libclassloops.so: basicClassification.o advancedClassificationLoop.o
 	
 loopd: 	libclassloops.so
 
-assignemnt_1_main.o: assignemnt_1_main.c NumClass.h
-	gcc  -c -fPIC -Wall assignemnt_1_main.c 
+main.o: main.c NumClass.h
+	gcc  -c -fPIC -Wall main.c 
 
-mains: libclassrec.a assignemnt_1_main.o
-	gcc -o mains assignemnt_1_main.o libclassrec.a
+mains: libclassrec.a main.o
+	gcc -o mains main.o libclassrec.a
 	
 
-maindloop: ./libclassloops.so assignemnt_1_main.o
-	gcc  -o  maindloop assignemnt_1_main.o ./libclassloops.so
+maindloop: ./libclassloops.so main.o
+	gcc  -o  maindloop main.o ./libclassloops.so
 
-maindrec: ./libclassrec.so assignemnt_1_main.o
-	gcc  -o  maindrec assignemnt_1_main.o ./libclassrec.so
+maindrec: ./libclassrec.so main.o
+	gcc  -o  maindrec main.o ./libclassrec.so
 
 all: maindrec maindloop mains
 
