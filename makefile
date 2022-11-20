@@ -16,7 +16,7 @@ recursive : basicClassification.o advancedClassificationRecursion.o libclassrec.
 	gcc -c -o  makeloops.o basicClassification.o advancedClassificationRecursion.o  libclassrec.a
 
 libclassrec.a : basicClassification.o advancedClassificationRecursion.o 	
-	ar rcs libclassrec.a  basicClassification.o advancedClassificationRecursion.o 
+	ar -rcs libclassrec.a  basicClassification.o advancedClassificationRecursion.o 
 	ranlib libclassrec.a
 
 
