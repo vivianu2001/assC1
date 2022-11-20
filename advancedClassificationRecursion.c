@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 #include "NumClass.h"
 
 
@@ -19,6 +18,23 @@ int isArmstrong(int num)
 return isArmstrong_Check(temp2,digits)==(long)num;
 	
 	}
+
+double pow(int num,  int power)
+{  
+	if(power==0)
+	{
+	return 1;
+	}
+	if(power==1)
+	{
+        return num;
+	}
+	else
+	{
+		return num* pow(num,power-1);
+	}
+
+}
 
 long isArmstrong_Check(int num, int power)
 {
