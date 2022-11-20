@@ -29,10 +29,10 @@ libclassrec.so: basicClassification.o advancedClassificationRecursion.o
 	
 recursived : libclassrec.so
 	
-libclassloop.so: basicClassification.o advancedClassificationLoop.o	
+libclassloops.so: basicClassification.o advancedClassificationLoop.o	
 	gcc -shared -o libclassloops.so basicClassification.o advancedClassificationLoop.o
 	
-loopd: 	libclassloop.so
+loopd: 	libclassloops.so
 
 assignemnt_1_main.o: assignemnt_1_main.c NumClass.h
 	gcc  -c -fPIC -Wall assignemnt_1_main.c 
