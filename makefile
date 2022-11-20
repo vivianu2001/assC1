@@ -42,7 +42,7 @@ mains: libclassrec.a assignemnt_1_main.o
 	
 
 maindloop: ./libclassloops.so assignemnt_1_main.o
-	gcc  -o assignemnt_1_main.o ./libclassloops.so
+	gcc  -o  maindloop assignemnt_1_main.o ./libclassloops.so
 
 maindrec: ./libclassrec.so assignemnt_1_main.o
 	gcc  -o  maindrec assignemnt_1_main.o ./libclassrec.so
