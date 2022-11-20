@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#include "assignment1.h"
+#include "NumClass.h"
 
 
 int count_digits(int);
