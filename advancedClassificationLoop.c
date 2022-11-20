@@ -1,6 +1,23 @@
 #include <stdio.h>
-#include <math.h>
 #include "NumClass.h"
+
+
+double pow(double  num,  double power)
+{  
+	if(power==0)
+	{
+	return 1;
+	}
+	if(power==1)
+	{
+        return num;
+	}
+	else
+	{
+		return num* pow(num,power-1);
+	}
+
+}
 
 int isArmstrong(int num)
 
