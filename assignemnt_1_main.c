@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include "advancedClassificationRecursion.c"
-#include "basicClassification.c"
 
 int main()
 {
