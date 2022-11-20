@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "assignment1.h"
+#include "NumClass.h"
 
 long factorial(int);
 
