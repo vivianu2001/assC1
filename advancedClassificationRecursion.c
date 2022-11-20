@@ -16,7 +16,7 @@ int isArmstrong(int num)
 	int temp2=num;
     int digits= count_digits(temp);
 	
-return isArmstrong_Check(temp2,digits)==(long)num);
+return isArmstrong_Check(temp2,digits)==(long)num;
 	
 	}
 
