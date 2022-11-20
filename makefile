@@ -1,51 +1,55 @@
- 
+CC = gcc 
+OBJECTSLOOPS= basicClassification.o advancedClassificationLoop.o
+OBJECTRECURSION= basicClassification.o advancedClassificationRecursion.o 
+AR= ar
+FLAGS= -fPIC -Wall
 
 loops :  libclassloops.a
 
 	
-libclassloops.a: basicClassification.o advancedClassificationLoop.o	
-	ar -rcs libclassloops.a basicClassification.o advancedClassificationLoop.o
+libclassloops.a: $(OBJECTSLOOPS)	
+	$(AR) -rcs libclassloops.a $(OBJECTSLOOPS)
 	ranlib libclassloops.a
 
 basicClassification.o : basicClassification.c NumClass.h 												
-	gcc  -c -fPIC -Wall  basicClassification.c 
+	$(CC)  -c $(FLAGS)  basicClassification.c 
 
 advancedClassificationLoop.o : advancedClassificationLoop.c  NumClass.h 							
-	gcc -c -fPIC -Wall advancedClassificationLoop.c 
+	$(CC)  -c $(FLAGS) advancedClassificationLoop.c 
 
 recursives :  libclassrec.a
 	
 
-libclassrec.a : basicClassification.o advancedClassificationRecursion.o 	
-	ar -rcs libclassrec.a  basicClassification.o advancedClassificationRecursion.o 
+libclassrec.a : $(OBJECTRECURSION)	
+	$(AR) -rcs libclassrec.a  $(OBJECTRECURSION) 
 	ranlib libclassrec.a
 
 
 advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h 
-	gcc -c -fPIC -Wall  advancedClassificationRecursion.c 
+	$(CC)  -c $(FLAGS)  advancedClassificationRecursion.c 
 
-libclassrec.so: basicClassification.o advancedClassificationRecursion.o 
-	gcc  -shared -o libclassrec.so basicClassification.o advancedClassificationRecursion.o 
+libclassrec.so: $(OBJECTRECURSION)
+	$(CC)   -shared -o libclassrec.so $(OBJECTRECURSION) 
 	
 recursived : libclassrec.so
 	
-libclassloops.so: basicClassification.o advancedClassificationLoop.o	
-	gcc -shared -o libclassloops.so basicClassification.o advancedClassificationLoop.o
+libclassloops.so: $(OBJECTSLOOPS)
+	$(CC)  -shared -o libclassloops.so $(OBJECTSLOOPS)
 	
 loopd: 	libclassloops.so
 
 main.o: main.c NumClass.h
-	gcc  -c -fPIC -Wall main.c 
+	$(CC)   -c $(FLAGS) main.c 
 
 mains: libclassrec.a main.o
-	gcc -o mains main.o libclassrec.a
+	$(CC)  -o mains main.o libclassrec.a
 	
 
 maindloop: ./libclassloops.so main.o
-	gcc  -o  maindloop main.o ./libclassloops.so
+	$(CC)   -o  maindloop main.o ./libclassloops.so
 
 maindrec: ./libclassrec.so main.o
-	gcc  -o  maindrec main.o ./libclassrec.so
+	$(CC)   -o  maindrec main.o ./libclassrec.so
 
 all: maindrec maindloop mains loops
 
