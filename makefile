@@ -47,7 +47,7 @@ maindloop: ./libclassloops.so main.o
 maindrec: ./libclassrec.so main.o
 	gcc  -o  maindrec main.o ./libclassrec.so
 
-all: maindrec maindloop mains
+all: maindrec maindloop mains loops
 
 clean :
 	rm -f *.o *.a *.so maindrec maindloop mains
