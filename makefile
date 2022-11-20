@@ -1,7 +1,7 @@
  
 
-loops : basicClassification.o advancedClassificationLoop.o libclassloops.a
-	gcc -c -o  makeloops.o basicClassification.o advancedClassificationLoop.o libclassloops.a
+loops :  libclassloops.a
+
 	
 libclassloops.a: basicClassification.o advancedClassificationLoop.o	
 	ar -rcs libclassloops.a basicClassification.o advancedClassificationLoop.o
@@ -13,8 +13,8 @@ basicClassification.o : basicClassification.c NumClass.h
 advancedClassificationLoop.o : advancedClassificationLoop.c  NumClass.h 							
 	gcc -c -fPIC -Wall advancedClassificationLoop.c 
 
-recursives : basicClassification.o advancedClassificationRecursion.o libclassrec.a
-	gcc -c -o  makeloops.o basicClassification.o advancedClassificationRecursion.o  libclassrec.a
+recursives :  libclassrec.a
+	
 
 libclassrec.a : basicClassification.o advancedClassificationRecursion.o 	
 	ar -rcs libclassrec.a  basicClassification.o advancedClassificationRecursion.o 
