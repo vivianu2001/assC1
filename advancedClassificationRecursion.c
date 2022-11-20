@@ -72,20 +72,19 @@ int isPalindrome(int num)
 	}
 }
 
-int palindrome_Check(int temp,int sum)
+int result;
+int digit=0;
+int palindrome_Check(int temp,int result)
 {
 	if (temp==0)
 	{
-		return 0;
+		return result;
 	}
-	int digit=0;
-    if (temp!=0)
-{
+	
+
 	digit=temp%10;
-	sum=(sum*10)+digit;
-     palindrome_Check(temp/10,sum);
-}
-	return sum;
+	result =(result*10)+digit;
+     return palindrome_Check(temp/10,result);
 
 }
 
