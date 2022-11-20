@@ -47,8 +47,7 @@ maindloop: ./libclassloops.so assignemnt_1_main.o
 maindrec: ./libclassrec.so assignemnt_1_main.o
 	gcc  -o  maindrec assignemnt_1_main.o ./libclassrec.so
 
-all:  basicClassification.o advancedClassificationLoop.o libclassloops.a libclassrec.a  assignemnt_1_main.c 	
-	gcc  -c assignemnt_1_main.c 	      
+all: maindrec maindloop mains
 
 clean :
-	rm -f *.o
+	rm -f *.o *.a *.so maindrec maindloop mains
