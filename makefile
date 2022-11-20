@@ -33,7 +33,7 @@ assignemnt_1_main.o: assignemnt_1_main.c NumClass.h
 	gcc  -c -fPIC -Wall assignemnt_1_main.c 
 
 mains: libclassrec.a assignemnt_1_main.o
-	gcc assignemnt_1_main.o -L -lclassrec -o mains
+	gcc -o mains assignemnt_1_main.o libclassrec.a
 	
 
 maindloop: libclassloops.so assignemnt_1_main.c
